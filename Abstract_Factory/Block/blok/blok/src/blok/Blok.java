@@ -18,10 +18,10 @@ public class Blok {
         Core core = new Core();
         core.initialize();
         core.getUIController().createMenuItem("teste", "Open");
-        boolean b = core.initialize();
-        System.out.println(b);
-        PluginController p = new PluginController();
-        p.createProducts();
+        //boolean b = core.initialize();
+        //System.out.println(b);
+        //PluginController p = new PluginController();
+        
     }
     
 }

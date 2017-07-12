@@ -7,8 +7,8 @@ package blok.interfaces;
 
 /**
  *
- * @author alex
+ * @author aluno
  */
-public interface IPlugin {
+public interface IFactory {
     
 }

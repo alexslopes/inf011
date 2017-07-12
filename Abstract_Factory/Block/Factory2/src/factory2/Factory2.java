@@ -5,17 +5,23 @@
  */
 package factory2;
 
+import blok.interfaces.IAbstractProduct1;
+import blok.interfaces.IAbstractProduct2;
+import blok.interfaces.IFactory;
+import blok.interfaces.IPlugin;
+
 /**
  *
  * @author alex
  */
-public class Factory2 {
+public class Factory2 implements IPlugin, IFactory{
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
+    public IAbstractProduct1 createProduct1(){
+        return new Product1();
+    }
+    
+    public IAbstractProduct2 createProduct2(){
+        return new Product2();
     }
     
 }

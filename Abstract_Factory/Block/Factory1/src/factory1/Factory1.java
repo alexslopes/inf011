@@ -7,13 +7,14 @@ package factory1;
 
 import blok.interfaces.IAbstractProduct1;
 import blok.interfaces.IAbstractProduct2;
+import blok.interfaces.IFactory;
 import blok.interfaces.IPlugin;
 
 /**
  *
  * @author alex
  */
-public class Factory1 implements IPlugin{
+public class Factory1 implements IPlugin, IFactory{
     
     public IAbstractProduct1 createProduct1(){
         return new Product1();
