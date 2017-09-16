@@ -52,14 +52,14 @@ public class PluginController implements IPluginController {
     private void lerPlugin() throws MalformedURLException, ClassNotFoundException, InstantiationException, IllegalAccessException {
         
             File currentDir = new File("./plugins");//localiza diretorio
-            String[] plugins = currentDir.list();//lista de diret[orios 
+            String[] plugins = currentDir.list();//lista de arquivos no diretório 
             int i;
             URL[] jars = new URL[plugins.length];
             for (i = 0; i < plugins.length; i++) {
                 System.out.println(i + 1 + " - " + plugins[i].split("\\.")[0]);
                 //System.out.println(i);
-                jars[i] = (new File("./plugins/" + plugins[i])).toURL();
-                URLClassLoader ulc = new URLClassLoader(jars);
+                jars[i] = (new File("./plugins/" + plugins[i])).toURI().toURL();//converte locais para url
+                URLClassLoader ulc = new URLClassLoader(jars);//CalssLoadet carrega classes  via URL que estão em jars   ou diretorios
                 String factoryName = plugins[i].split("\\.")[0];
                 IPlugin factory = (IPlugin) Class.forName(factoryName.toLowerCase() + "." + factoryName, true, ulc).newInstance();
                 pluginFactory.add(factory);
