@@ -32,7 +32,7 @@ public class IteratorPorSexo implements IIterator{
     }
 
     @Override
-    public void next() {
+    public Object next() {
         this.cont ++;
     }
 

@@ -31,8 +31,9 @@ public class IteratorMeninas implements IIterator{
     }
 
     @Override
-    public void next() {
+    public Object next() {
         cont++;
+        return null;
     }
 
     @Override
@@ -48,6 +49,11 @@ public class IteratorMeninas implements IIterator{
             cont = 0;
         }
         return meninas.get(cont);
+    }
+
+    @Override
+    public boolean hasNext() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
 }

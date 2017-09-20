@@ -14,6 +14,12 @@ public class Aluno {
     private char genero;
     private double nota;
 
+    public Aluno(String nome, char genero, double nota) {
+        this.nome = nome;
+        this.genero = genero;
+        this.nota = nota;
+    }
+
     public String getNome() {
         return nome;
     }

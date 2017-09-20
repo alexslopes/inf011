@@ -14,9 +14,11 @@ import model.Aluno;
 public interface IIterator {
     void first();
     
-    void next();
+    Object next();
     
     boolean isDone();
     
-    Aluno currentItem();
+    boolean hasNext();
+    
+    Object currentItem();
 }

@@ -34,7 +34,7 @@ public class IteratorNotaMaiorX implements IIterator {
     }
 
     @Override
-    public void next() {
+    public Object next() {
         this.cont++;
     }
 
@@ -51,6 +51,11 @@ public class IteratorNotaMaiorX implements IIterator {
             cont = 0;
         }
         return alunos.get(cont);
+    }
+
+    @Override
+    public boolean hasNext() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }
