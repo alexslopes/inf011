@@ -31,12 +31,17 @@ public class IteratorSuperPower implements IIterator {
         this.objeto = objeto;
         this.operator = operator;
         this.nota = nota;
-    }
+    }   
+    
+    public Object verificadorDeMetodo(Object objeto, String metodo) throws InvocationTargetException, IllegalAccessException, NoSuchMethodException, ClassNotFoundException{
+        Class clazz = Class.forName(objeto.getClass().getName());
+        Method metodoDoSeuObjeto = clazz.getMethod("get" + StringUtils.capitalize(metodo));
+        Object retornoDoMetodo = metodoDoSeuObjeto.invoke(objeto);
+        return retornoDoMetodo;
 
-    public IteratorSuperPower(List<Object> objetos, String objeto) {
-        this.objetos = objetos;
-        this.objeto = objeto;
     }
+    
+    
 
     @Override
     public void first() {
@@ -45,95 +50,40 @@ public class IteratorSuperPower implements IIterator {
 
     @Override
     public Aluno next() {
-        for (Object x : objetos) {
-            if (">".equals(operator)) {
-                this.maior(objetos, nota);
-            } else if ("<".equals(operator)) {
-                this.menor(alunos, nota);
-            } else if ("==".equals(operator)) {
-                this.igual(alunos, nota);
-            } else if (">=".equals(operator)) {
-                this.maiorOuIgual(alunos, nota);
-            } else if ("<=".equals(operator)) {
-                this.menorOuIgual(alunos, nota);
+        try {
+            Object metodo = verificadorDeMetodo(this.objetos.get(cont), objeto);
+            if(metodo instanceof Double){
+                return compararNumeros(metodo);
+            }else if (metodo instanceof Double){
+                return compararString(metodo);
             }
+        } catch (InvocationTargetException ex) {
+            Logger.getLogger(IteratorSuperPower.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(IteratorSuperPower.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (NoSuchMethodException ex) {
+            Logger.getLogger(IteratorSuperPower.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(IteratorSuperPower.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        return null;
     }
 
     @Override
     public boolean isDone() {
-        return this.cont == alunos.size();
+        return objetos.size() == cont; 
     }
 
     @Override
     public boolean hasNext() {
-        if (cont < (alunos.size() - 1)) {
-            return true;
-        }
-        return false;
+       return (objetos.size() - 1) != cont; 
     }
 
     @Override
     public Aluno currentItem() {
-        if (isDone()) {
-            cont = alunos.size() - 1;
-        } else if (cont < 0) {
-            cont = 0;
-        }
-        return alunos.get(cont);
-    }
-
-    private Object getObjeto(Object objeto) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        Class clazz = Class.forName(objeto.getClass().getName());
-        Method metodoDoSeuObjeto = clazz.getMethod("get" + StringUtils.capitalize(this.objeto));
-        Object retornoDoMetodo = metodoDoSeuObjeto.invoke(objeto);
-        return retornoDoMetodo;
-    }
-
-    private boolean comparador(Object objeto, double nota, String operator) throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
-        Object x = getObjeto(objeto);
         
-         if (">".equals(operator)) {
-                return (double) x > nota;
-            } else if ("<".equals(operator)) {
-                return (double) x > nota;
-            } else if ("==".equals(operator)) {
-                return (double) x > nota;
-            } else if (">=".equals(operator)) {
-                this.maiorOuIgual(alunos, nota);
-            } else if ("<=".equals(operator)) {
-                this.menorOuIgual(alunos, nota);
-            }
-    }
-    
-
-    private boolean menor(Object objeto, double nota) {
-        Object x = getObjeto(objeto);
-        return (double) x < nota;
     }
 
-    private void maiorOuIgual(List<Aluno> alunos, double nota) {
-        for (Aluno x : alunos) {
-            if (x.getNota() >= nota) {
-                alunos.add(x);
-            }
-        }
-    }
-
-    private void menorOuIgual(List<Aluno> alunos, double nota) {
-        for (Aluno x : alunos) {
-            if (x.getNota() > nota) {
-                alunos.add(x);
-            }
-        }
-    }
-
-    private void igual(List<Object> objetos, double nota) {
-        for (Obje x : objetos) {
-            if (x.getNota() == nota) {
-                alunos.add(x);
-            }
-        }
-    }
 
 }
