@@ -11,23 +11,21 @@ import interfaces.Command;
  *
  * @author aluno
  */
-public class CommandMultiplicar implements Command{ 
-    private int num1;
-    private int num2;
-    private int result;
+public class CommandSomar implements Command{
+    private Receiver receiver;
 
-    public CommandMultiplicar(int num1, int num2) {
-        this.num1 = num1;
-        this.num2 = num2;
+    public CommandSomar(Receiver receiver) {
+        this.receiver = receiver;
     }
     
     @Override
     public void redo() {
-      result = num1 * num2; 
+      result = num1 + num2; 
     }
 
     @Override
     public void undo() {
-      result = num1 / num2;
+      result = num1 - num2;
     }
+    
 }

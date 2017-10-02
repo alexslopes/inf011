@@ -10,5 +10,6 @@ package interfaces;
  * @author aluno
  */
 public interface Command {
-    
+    public void redo();
+    public void undo();
 }

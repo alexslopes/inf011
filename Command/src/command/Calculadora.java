@@ -30,69 +30,74 @@ public class Calculadora extends javax.swing.JPanel {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
-        jButton9 = new javax.swing.JButton();
-        jButton10 = new javax.swing.JButton();
-        jButton11 = new javax.swing.JButton();
-        jButton12 = new javax.swing.JButton();
-        jButton13 = new javax.swing.JButton();
-        jButton14 = new javax.swing.JButton();
-        jButton15 = new javax.swing.JButton();
-        jButton16 = new javax.swing.JButton();
-        jButton17 = new javax.swing.JButton();
+        jbt7 = new javax.swing.JButton();
+        jbt8 = new javax.swing.JButton();
+        jbt9 = new javax.swing.JButton();
+        jbt4 = new javax.swing.JButton();
+        jbt5 = new javax.swing.JButton();
+        jb6 = new javax.swing.JButton();
+        jb7 = new javax.swing.JButton();
+        jb8 = new javax.swing.JButton();
+        jb9 = new javax.swing.JButton();
+        btnResult = new javax.swing.JButton();
+        btnDel = new javax.swing.JButton();
+        btnDIvidir = new javax.swing.JButton();
+        btnSubtrair = new javax.swing.JButton();
+        jbt14 = new javax.swing.JButton();
+        jbt15 = new javax.swing.JButton();
+        btnMultiplicar = new javax.swing.JButton();
+        jbtSomar = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
-        jButton1.setText("7");
-
-        jButton2.setText("8");
-
-        jButton3.setText("9");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        jbt7.setText("7");
+        jbt7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                jbt7ActionPerformed(evt);
             }
         });
 
-        jButton4.setText("4");
+        jbt8.setText("8");
 
-        jButton5.setText("5");
-
-        jButton6.setText("6");
-
-        jButton7.setText("1");
-
-        jButton8.setText("2");
-
-        jButton9.setText("3");
-
-        jButton10.setText("=");
-
-        jButton11.setText("DEL");
-
-        jButton12.setText("%");
-
-        jButton13.setText("-");
-        jButton13.addActionListener(new java.awt.event.ActionListener() {
+        jbt9.setText("9");
+        jbt9.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton13ActionPerformed(evt);
+                jbt9ActionPerformed(evt);
             }
         });
 
-        jButton14.setText("0");
+        jbt4.setText("4");
 
-        jButton15.setText(",");
+        jbt5.setText("5");
 
-        jButton16.setText("x");
+        jb6.setText("6");
 
-        jButton17.setText("+");
+        jb7.setText("1");
+
+        jb8.setText("2");
+
+        jb9.setText("3");
+
+        btnResult.setText("=");
+
+        btnDel.setText("DEL");
+
+        btnDIvidir.setText("%");
+
+        btnSubtrair.setText("-");
+        btnSubtrair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSubtrairActionPerformed(evt);
+            }
+        });
+
+        jbt14.setText("0");
+
+        jbt15.setText(",");
+
+        btnMultiplicar.setText("x");
+
+        jbtSomar.setText("+");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -105,35 +110,35 @@ public class Calculadora extends javax.swing.JPanel {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton4)
+                                .addComponent(jbt4)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton5))
+                                .addComponent(jbt5))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton7)
+                                .addComponent(jb7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton8))
+                                .addComponent(jb8))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton10)
+                                .addComponent(btnResult)
                                 .addGap(16, 16, 16)
-                                .addComponent(jButton14))
+                                .addComponent(jbt14))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(jbt7)
                                 .addGap(18, 18, 18)
-                                .addComponent(jButton2)))
+                                .addComponent(jbt8)))
                         .addGap(24, 24, 24)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton3)
-                            .addComponent(jButton6)
-                            .addComponent(jButton9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jbt9)
+                            .addComponent(jb6)
+                            .addComponent(jb9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jbt15, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton12)
-                            .addComponent(jButton16)
-                            .addComponent(jButton13)
-                            .addComponent(jButton17)))
+                            .addComponent(btnDIvidir)
+                            .addComponent(btnMultiplicar)
+                            .addComponent(btnSubtrair)
+                            .addComponent(jbtSomar)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnDel, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(58, 58, 58)))
                 .addContainerGap())
         );
@@ -144,61 +149,65 @@ public class Calculadora extends javax.swing.JPanel {
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton12))
+                    .addComponent(jbt7)
+                    .addComponent(jbt8)
+                    .addComponent(jbt9)
+                    .addComponent(btnDIvidir))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6)
-                    .addComponent(jButton16))
+                    .addComponent(jbt4)
+                    .addComponent(jbt5)
+                    .addComponent(jb6)
+                    .addComponent(btnMultiplicar))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7)
-                    .addComponent(jButton8)
-                    .addComponent(jButton9)
-                    .addComponent(jButton13))
+                    .addComponent(jb7)
+                    .addComponent(jb8)
+                    .addComponent(jb9)
+                    .addComponent(btnSubtrair))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton15)
-                    .addComponent(jButton14)
-                    .addComponent(jButton17))
+                    .addComponent(btnResult, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jbt15)
+                    .addComponent(jbt14)
+                    .addComponent(jbtSomar))
                 .addGap(9, 9, 9)
-                .addComponent(jButton11)
+                .addComponent(btnDel)
                 .addContainerGap(26, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void jbt9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt9ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_jbt9ActionPerformed
 
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+    private void btnSubtrairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubtrairActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton13ActionPerformed
+    }//GEN-LAST:event_btnSubtrairActionPerformed
+
+    private void jbt7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbt7ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jbt7ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton10;
-    private javax.swing.JButton jButton11;
-    private javax.swing.JButton jButton12;
-    private javax.swing.JButton jButton13;
-    private javax.swing.JButton jButton14;
-    private javax.swing.JButton jButton15;
-    private javax.swing.JButton jButton16;
-    private javax.swing.JButton jButton17;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
-    private javax.swing.JButton jButton9;
+    private javax.swing.JButton btnDIvidir;
+    private javax.swing.JButton btnDel;
+    private javax.swing.JButton btnMultiplicar;
+    private javax.swing.JButton btnResult;
+    private javax.swing.JButton btnSubtrair;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jb6;
+    private javax.swing.JButton jb7;
+    private javax.swing.JButton jb8;
+    private javax.swing.JButton jb9;
+    private javax.swing.JButton jbt14;
+    private javax.swing.JButton jbt15;
+    private javax.swing.JButton jbt4;
+    private javax.swing.JButton jbt5;
+    private javax.swing.JButton jbt7;
+    private javax.swing.JButton jbt8;
+    private javax.swing.JButton jbt9;
+    private javax.swing.JButton jbtSomar;
     // End of variables declaration//GEN-END:variables
 }

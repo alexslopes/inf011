@@ -11,23 +11,24 @@ import interfaces.Command;
  *
  * @author aluno
  */
-public class CommandMultiplicar implements Command{ 
+public class CommandDividir implements Command{
     private int num1;
     private int num2;
     private int result;
 
-    public CommandMultiplicar(int num1, int num2) {
+    public CommandDividir(int num1, int num2) {
         this.num1 = num1;
         this.num2 = num2;
     }
     
     @Override
     public void redo() {
-      result = num1 * num2; 
+      result = num1 / num2; 
     }
 
     @Override
     public void undo() {
-      result = num1 / num2;
+      result = num1 * num2;
     }
+    
 }

@@ -12,10 +12,23 @@ import interfaces.Command;
  * @author aluno
  */
 public class CommandSubtrair implements Command{
+    private int num1;
+    private int num2;
+    private int result;
+
+    public CommandSubtrair(int num1, int num2) {
+        this.num1 = num1;
+        this.num2 = num2;
+    }
+    
+    @Override
+    public void redo() {
+      result = num1 - num2; 
+    }
 
     @Override
-    public void Execute() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void undo() {
+      result = num1 + num2;
     }
     
 }
