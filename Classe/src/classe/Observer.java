@@ -11,4 +11,6 @@ package classe;
  */
 public interface Observer {
     
+    public void update();
+    
 }

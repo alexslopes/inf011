@@ -10,9 +10,17 @@ package classe;
  * @author aluno
  */
 public interface Subject {
-    public void Adcionar(Observer observer);
+    public void AdcionarINF011(Observer observer);
     
-    public void Remover(Observer observer);
+    public void RemoverINF011(Observer observer);
     
-    public void Notify();
+    public void AdcionarINF012(Observer observer);
+    
+    public void RemoverINF012(Observer observer);
+    
+    public void NotifyINF011();
+    
+    public void NotifyINF012();
+    
+    public boolean getState();
 }
