@@ -5,21 +5,29 @@
  */
 package classe;
 
+import java.util.Observable;
+import java.util.Observer;
+
 /**
  *
  * @author aluno
  */
 public class Aluno implements Observer{
-    private Subject professor;
+    private Observable professor;
     private boolean state;
     
-    public Aluno(Subject professor){
+    public Aluno(Observable professor){
         this.professor = professor;
     }
     
-    @Override
-    public void update(){
-        state = this.professor.getState();
+    public boolean observerState() {
+        return this.state;
     }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        this.state = this.professor.getState();
+    }
+
     
 }

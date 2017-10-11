@@ -13,59 +13,64 @@ import java.util.List;
  *
  * @author aluno
  */
-public class Professor implements Subject{
-    private List<Observer> alunosINF011;
-    private List<Observer> alunosINF012;
+public class Professor implements Subject {
+
+    private List<IObserver> alunosINF011;
+    private List<IObserver> alunosINF012;
     private HashMap<String, List> alunosMap = new HashMap<>();
-    private boolean state;
-    
-    public Professor(){
-        alunosINF012 = new ArrayList<Observer>();
-        alunosINF011 = new ArrayList<Observer>();
+    private boolean state = false;
+
+    public Professor() {
+        alunosINF012 = new ArrayList<IObserver>();
+        alunosINF011 = new ArrayList<IObserver>();
         alunosMap.put("inf011", alunosINF011);
         alunosMap.put("inf012", alunosINF011);
     }
-    
-    public void setState(boolean state){
+
+    public void setState(boolean state) {
         this.state = state;
         this.NotifyINF011();
+        this.NotifyINF012();
     }
-    
-    public boolean getState(){
+
+    public boolean getState() {
         return this.state;
     }
 
     @Override
-    public void AdcionarINF011(Observer observer) {
+    public void AdcionarINF011(IObserver observer) {
         alunosINF011.add(observer);
     }
 
     @Override
-    public void RemoverINF011(Observer observer) {
+    public void RemoverINF011(IObserver observer) {
         alunosINF011.remove(observer);
     }
 
     @Override
-    public void AdcionarINF012(Observer observer) {
+    public void AdcionarINF012(IObserver observer) {
         alunosINF012.add(observer);
     }
 
     @Override
-    public void RemoverINF012(Observer observer) {
+    public void RemoverINF012(IObserver observer) {
         alunosINF012.remove(observer);
     }
 
     @Override
     public void NotifyINF011() {
-        for(Object x : alunosMap.get("inf011")){
-            Observer aluno = (Observer) x;
+        for (Object x : alunosMap.get("inf011")) {
+            IObserver aluno = (IObserver) x;
             aluno.update();
         }
     }
 
     @Override
     public void NotifyINF012() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        for (Object x : alunosMap.get("inf012")) {
+            IObserver aluno = (IObserver) x;
+            aluno.update();
+        }
     }
 
 }
