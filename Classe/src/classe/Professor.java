@@ -8,6 +8,7 @@ package classe;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import javax.security.auth.Subject;
 
 /**
  *
@@ -15,62 +16,38 @@ import java.util.List;
  */
 public class Professor implements Subject {
 
-    private List<IObserver> alunosINF011;
-    private List<IObserver> alunosINF012;
     private HashMap<String, List> alunosMap = new HashMap<>();
     private boolean state = false;
 
-    public Professor() {
-        alunosINF012 = new ArrayList<IObserver>();
-        alunosINF011 = new ArrayList<IObserver>();
-        alunosMap.put("inf011", alunosINF011);
-        alunosMap.put("inf012", alunosINF011);
+    public Professor(String key, List aluno) {
+        alunosMap.put( key, aluno);
     }
 
     public void setState(boolean state) {
         this.state = state;
-        this.NotifyINF011();
-        this.NotifyINF012();
+        this.Notify();
     }
 
     public boolean getState() {
         return this.state;
     }
 
-    @Override
-    public void AdcionarINF011(IObserver observer) {
-        alunosINF011.add(observer);
+    public void Adcionar(String key, List aluno) {
+        alunosMap.put(key, aluno);
+    }
+
+    public void Remover(List observer) {
+        alunosMap.remove(observer);
     }
 
     @Override
-    public void RemoverINF011(IObserver observer) {
-        alunosINF011.remove(observer);
-    }
-
-    @Override
-    public void AdcionarINF012(IObserver observer) {
-        alunosINF012.add(observer);
-    }
-
-    @Override
-    public void RemoverINF012(IObserver observer) {
-        alunosINF012.remove(observer);
-    }
-
-    @Override
-    public void NotifyINF011() {
-        for (Object x : alunosMap.get("inf011")) {
-            IObserver aluno = (IObserver) x;
+    public void Notify(String key) {
+        for (Object x : alunosMap.get(key)) {
+            List aluno = (List) x;
             aluno.update();
         }
     }
 
-    @Override
-    public void NotifyINF012() {
-        for (Object x : alunosMap.get("inf012")) {
-            IObserver aluno = (IObserver) x;
-            aluno.update();
-        }
     }
 
 }
